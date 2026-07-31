@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persebaran Fasilitas Kesehatan Kota Jambi</title>
+<meta name="description" content="Peta digital interaktif persebaran fasilitas kesehatan di Kota Jambi — rumah sakit, puskesmas, klinik, dan apotek.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-pulse">
+      <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+    <p>Memuat data fasilitas kesehatan...</p>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-brand">
+      <span class="nav-brand-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+      <span class="nav-brand-text">SIG Kesehatan <strong>Kota Jambi</strong></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Beranda</a>
+      <a href="#ringkasan" class="nav-link">Ringkasan</a>
+      <a href="#peta" class="nav-link">Peta</a>
+      <a href="#statistik" class="nav-link">Statistik</a>
+      <a href="#daftar" class="nav-link">Daftar Fasilitas</a>
+      <a href="#galeri" class="nav-link">Galeri</a>
+      <a href="#fakta" class="nav-link">Fakta Menarik</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos>
+    <span class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Sistem Informasi Geografis &middot; Kota Jambi</span>
+    <h1 class="hero-title">Persebaran Fasilitas<br>Kesehatan <span>Kota Jambi</span></h1>
+    <p class="hero-desc">
+      Mengetahui lokasi fasilitas kesehatan terdekat bukan sekadar kemudahan, melainkan kebutuhan mendasar
+      saat kondisi darurat. Platform ini menghadirkan peta digital interaktif rumah sakit, puskesmas, klinik,
+      dan apotek di Kota Jambi agar masyarakat dapat mengakses layanan kesehatan dengan cepat, tepat, dan tanpa hambatan.
+    </p>
+    <div class="hero-actions">
+      <a href="#peta" class="btn btn-primary"><i class="fa-solid fa-map"></i> Lihat Peta</a>
+      <a href="#daftar" class="btn btn-ghost"><i class="fa-solid fa-list"></i> Daftar Fasilitas</a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span></span> Gulir ke bawah
+    </div>
+  </div>
+</section>
+
+<!-- Tentang Sistem -->
+<section class="section" id="tentang">
+    <div class="container">
+
+        <div class="section-head">
+            <span class="eyebrow">Tentang Sistem</span>
+            <h2>Sistem Informasi Geografis Fasilitas Kesehatan Kota Jambi</h2>
+
+            <p>
+                Sistem Informasi Geografis (SIG) Fasilitas Kesehatan Kota Jambi merupakan
+                aplikasi berbasis web yang menyajikan informasi persebaran rumah sakit,
+                puskesmas, klinik, dan apotek di Kota Jambi secara interaktif. Website ini
+                bertujuan membantu masyarakat memperoleh informasi lokasi fasilitas
+                kesehatan dengan mudah, cepat, dan akurat.
+            </p>
+
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>Tujuan</h3>
+
+                <ul>
+                    <li>Menampilkan persebaran fasilitas kesehatan di Kota Jambi.</li>
+                    <li>Menyediakan informasi lokasi secara interaktif.</li>
+                    <li>Membantu masyarakat menemukan fasilitas kesehatan.</li>
+                    <li>Mendukung penyebaran informasi berbasis SIG.</li>
+                </ul>
+
+            </div>
+
+            <div class="about-card">
+                <div class="icon">💡</div>
+                <h3>Manfaat</h3>
+
+                <ul>
+                    <li>Mempermudah pencarian fasilitas kesehatan.</li>
+                    <li>Menyediakan informasi alamat dan lokasi.</li>
+                    <li>Meningkatkan akses informasi pelayanan kesehatan.</li>
+                    <li>Dapat diakses kapan saja melalui browser.</li>
+                </ul>
+
+            </div>
+
+            <div class="about-card">
+                <div class="icon">⚙️</div>
+                <h3>Fitur Sistem</h3>
+
+                <ul>
+                    <li>Peta interaktif.</li>
+                    <li>Filter berdasarkan jenis fasilitas.</li>
+                    <li>Pencarian fasilitas.</li>
+                    <li>Statistik jumlah fasilitas.</li>
+                    <li>Galeri foto.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ============ INFORMASI SINGKAT ============ -->
+<section class="section" id="ringkasan">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Ringkasan Data</span>
+      <h2>Informasi Singkat Fasilitas Kesehatan</h2>
+      <p>Rekapitulasi jumlah fasilitas kesehatan yang tersebar di seluruh kecamatan Kota Jambi.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card" data-aos data-aos-delay="0">
+        <div class="stat-icon rs"><i class="fa-solid fa-hospital"></i></div>
+        <div class="stat-value" data-count="15">0</div>
+        <div class="stat-label">Rumah Sakit</div>
+      </div>
+      <div class="stat-card" data-aos data-aos-delay="100">
+        <div class="stat-icon pkm"><i class="fa-solid fa-house-medical"></i></div>
+        <div class="stat-value" data-count="20">0</div>
+        <div class="stat-label">Puskesmas</div>
+      </div>
+      <div class="stat-card" data-aos data-aos-delay="200">
+        <div class="stat-icon klinik"><i class="fa-solid fa-stethoscope"></i></div>
+        <div class="stat-value" data-count="20">0</div>
+        <div class="stat-label">Klinik</div>
+      </div>
+      <div class="stat-card" data-aos data-aos-delay="300">
+        <div class="stat-icon apotek"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+        <div class="stat-value" data-count="20">0</div>
+        <div class="stat-label">Apotek</div>
+      </div>
+      <div class="stat-card stat-card-total" data-aos data-aos-delay="400">
+        <div class="stat-icon total"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="stat-value" data-count="75">0</div>
+        <div class="stat-label">Total Fasilitas Kesehatan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PETA INTERAKTIF ============ -->
+<section class="section section-alt" id="peta">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Peta Digital</span>
+      <h2>Peta Interaktif Fasilitas Kesehatan</h2>
+      <p>Jelajahi lokasi fasilitas kesehatan secara langsung. Gunakan filter, pencarian, dan lokasi Anda untuk menemukan layanan terdekat.</p>
+    </div>
+
+    <div class="map-panel" data-aos>
+      <div class="map-toolbar">
+        <div class="map-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="mapSearch" placeholder="Cari nama fasilitas atau alamat...">
+        </div>
+        <div class="map-filters" id="mapFilters">
+          <button class="filter-chip active" data-filter="all"><i class="fa-solid fa-border-all"></i> Semua</button>
+          <button class="filter-chip" data-filter="Rumah Sakit"><span class="dot rs"></span> Rumah Sakit</button>
+          <button class="filter-chip" data-filter="Puskesmas"><span class="dot pkm"></span> Puskesmas</button>
+          <button class="filter-chip" data-filter="Klinik"><span class="dot klinik"></span> Klinik</button>
+          <button class="filter-chip" data-filter="Apotek"><span class="dot apotek"></span> Apotek</button>
+        </div>
+        <button class="btn-locate" id="locateBtn" title="Temukan lokasi saya">
+          <i class="fa-solid fa-location-crosshairs"></i> Lokasi Saya
+        </button>
+      </div>
+      <div id="map"></div>
+      <p class="map-hint"><i class="fa-solid fa-circle-info"></i> Klik marker untuk melihat detail fasilitas. Gunakan tombol fullscreen di peta untuk tampilan penuh.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATISTIK ============ -->
+<section class="section" id="statistik">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Visualisasi Data</span>
+      <h2>Statistik Fasilitas Kesehatan</h2>
+      <p>Gambaran distribusi fasilitas kesehatan berdasarkan jenis dan kecamatan di Kota Jambi.</p>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card chart-wide" data-aos>
+        <h3><i class="fa-solid fa-chart-column"></i> Jumlah Fasilitas per Kecamatan</h3>
+        <div class="chart-box"><canvas id="chartKecamatan"></canvas></div>
+      </div>
+      <div class="chart-card" data-aos>
+        <h3><i class="fa-solid fa-chart-pie"></i> Persentase Berdasarkan Jenis</h3>
+        <div class="chart-box"><canvas id="chartJenisPie"></canvas></div>
+      </div>
+      <div class="chart-card" data-aos>
+        <h3><i class="fa-solid fa-chart-simple"></i> Jumlah Berdasarkan Jenis</h3>
+        <div class="chart-box"><canvas id="chartJenisBar"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAFTAR FASILITAS ============ -->
+<section class="section section-alt" id="daftar">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Direktori</span>
+      <h2>Daftar Fasilitas Kesehatan</h2>
+      <p>Cari dan telusuri seluruh fasilitas kesehatan yang tersedia di Kota Jambi.</p>
+    </div>
+
+    <div class="table-panel" data-aos>
+      <div class="table-toolbar">
+        <div class="map-search table-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="tableSearch" placeholder="Cari nama, jenis, kecamatan, atau alamat...">
+        </div>
+        <select id="tableFilterJenis" class="table-select">
+          <option value="all">Semua Jenis</option>
+          <option value="Rumah Sakit">Rumah Sakit</option>
+          <option value="Puskesmas">Puskesmas</option>
+          <option value="Klinik">Klinik</option>
+          <option value="Apotek">Apotek</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table class="fasilitas-table">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Jenis</th>
+              <th>Kecamatan</th>
+              <th>Alamat</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span id="tableCount">Menampilkan 0 fasilitas</span>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERI ============ -->
+<section class="section" id="galeri">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Dokumentasi</span>
+      <h2>Galeri Fasilitas Kesehatan</h2>
+      <p>Cuplikan visual suasana beberapa fasilitas kesehatan di Kota Jambi.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid" data-aos></div>
+  </div>
+</section>
+
+<!-- ============ FAKTA MENARIK ============ -->
+<section class="section section-alt" id="fakta">
+  <div class="container">
+    <div class="section-head" data-aos>
+      <span class="eyebrow">Insight</span>
+      <h2>Fakta Menarik</h2>
+      <p>Beberapa temuan menarik dari data persebaran fasilitas kesehatan Kota Jambi.</p>
+    </div>
+    <div class="fact-grid" id="factGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="nav-brand-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+      <div>
+        <h3>Fasilitas Kesehatan Kota Jambi</h3>
+        <p>Peta digital persebaran fasilitas kesehatan untuk masyarakat Kota Jambi.</p>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p class="footer-name">Della Rohana</p>
+      <p>NIM 23112011</p>
+      <p>Teknik Informatika</p>
+      <p>Universitas Nurdin Hamzah</p>
+      <p class="footer-year">&copy; 2026</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#home" class="back-to-top" id="backToTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="facilities.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
