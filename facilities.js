@@ -11,7 +11,7 @@ const FACILITIES = [
     "telp": "(0741) 61692",
     "status": "Pemerintah",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RSUD+Raden+Mattaher+Kota+Jambi",
-    "images": "images/rsud_radenmataher.jpeg"
+    "images": "rsud_radenmataher.jpeg"
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@ const FACILITIES = [
     "telp": "(0741) 5910190",
     "status": "Pemerintah",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RSUD+H.+Abdul+Manap+Kota+Jambi",
-    "foto": "images/rsud_abdulmanap.jpeg"
+    "foto": "rsud_abdulmanap.jpeg"
   },
   {
     "id": 3,
@@ -39,7 +39,7 @@ const FACILITIES = [
     "telp": "(0741) 582030",
     "status": "Swasta",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Rimbo+Medika+Kota+Jambi",
-    "foto": "images/rsud_rimbomedika.jpeg"
+    "foto": "rsud_rimbomedika.jpeg"
   },
   {
     "id": 4,
@@ -53,7 +53,7 @@ const FACILITIES = [
     "telp": "(0741) 668880",
     "status": "Swasta",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+MMC+(Mitra+Medika+Cendikia)+Kota+Jambi",
-    "foto": "images/rs_mitra.jpeg"
+    "foto": "rs_mitra.jpeg"
   },
   {
     "id": 5,
@@ -67,7 +67,7 @@ const FACILITIES = [
     "telp": "(0741) 667966",
     "status": "Swasta",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Islam+Arafah+Kota+Jambi",
-    "foto": "images/rs_arafah.jpg"
+    "foto": "rs_arafah.jpg"
   },
   {
     "id": 6,
@@ -81,7 +81,7 @@ const FACILITIES = [
     "telp": "(0741) 35165",
     "status": "Swasta",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Baiturrahim+Kota+Jambi",
-    "foto": "images/rs_baiturahim.png"
+    "foto": "rs_baiturahim.png"
   },
   {
     "id": 7,
@@ -95,7 +95,7 @@ const FACILITIES = [
     "telp": "(0741) 23246",
     "status": "Pemerintah",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=Rumkit+Bhayangkara+Jambi+Kota+Jambi",
-    "foto": "images/rs_bhayangkara.png"
+    "foto": "rs_bhayangkara.png"
   },
   {
     "id": 8,
@@ -109,7 +109,7 @@ const FACILITIES = [
     "telp": "(0741) 23119",
     "status": "Swasta",
     "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Santa+Theresia+Kota+Jambi",
-    "foto": "images/rs_santa.jpeg"
+    "foto": "rs_santa.jpeg"
   },
   {
     "id": 9,
